@@ -351,12 +351,15 @@ nav ul li a:hover {
 /* Contact Section */
 
 .contact-section {
+    width: 100%;
+    max-width: 100%;
     padding: 6rem 2rem;
     background: #ffffff;
     position: relative;
 }
 
 .contact-container {
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -386,6 +389,7 @@ nav ul li a:hover {
     grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
     align-items: start;
+    width: 100%;
 }
 
 .contact-info-card {
@@ -424,6 +428,7 @@ nav ul li a:hover {
     align-items: flex-start;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
 }
 
 .info-item:last-child {
@@ -434,11 +439,19 @@ nav ul li a:hover {
     font-size: 1.5rem;
     margin-right: 1rem;
     color: #2c5282;
+    flex-shrink: 0;
 }
 
 .info-content {
     flex: 1;
+    min-width: 0;
 }
+.info-content a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    display: inline-block;
+    max-width: 100%;
+  }
 
 .info-label {
     display: block;
@@ -476,6 +489,7 @@ nav ul li a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 .form-field {
@@ -537,11 +551,50 @@ nav ul li a:hover {
     background: #3b6ca1;
     transform: translateY(-2px);
 }
+@media (min-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .full-width {
+    grid-column: 1 / -1;
+  }
 
 /* Responsive Design */
+
+@media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
 @media (max-width: 768px) {
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+    .contact-info-card,
+    .contact-form {
+        width: 100%;
+        padding: 1rem;
     }
 
     .contact-title {
@@ -552,9 +605,7 @@ nav ul li a:hover {
         font-size: 1rem;
     }
 
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
+    
 }
 
 
